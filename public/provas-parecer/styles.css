@@ -1,0 +1,155 @@
+/* Certifique-se de que o body e o html cubram a altura total da página */
+html, body {
+    height: 100%; /* Garantir que a altura do body e html ocupe 100% da tela */
+    margin: 0; /* Remover margem padrão */
+}
+
+body {
+    background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), /* Camada de sobreposição branca com opacidade */
+    url('../images/background.jpg'); /* Caminho da imagem */
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a tela */
+    background-position: center center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */;
+    background-attachment: fixed; /* Mantém o fundo fixo ao rolar a página */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav {
+    margin-left: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #0056b3;
+}
+
+/* Botão de logout */
+.logout-button {
+    background-color: #0056b3;
+    color: white; /* Ajustado para branco */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-left: auto;
+}
+
+.logout-button:hover {
+    background-color: #004494;
+}
+
+/* Container principal */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+textarea, input[type="number"] {
+    width: 96%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    margin-right: 10px; /* Adicionada margem à direita */
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+button {
+    background-color: #0056b3;
+    color: white; /* Ajustado para branco */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #004494;
+}
+
+/* Estilo específico para o botão "Voltar" */
+button.logout-button {
+    background-color: #0056b3;
+    color: white; /* Ajustado para branco */
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+button.logout-button:hover {
+    background-color: #004494;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logout-button {
+        margin-top: 10px;
+    }
+}

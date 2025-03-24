@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provas Parecer</title>
+    <link rel="stylesheet" href="/provas-parecer/styles.css">
+    <script src="/provas-parecer/script.js"></script>                      
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/images/ipvc_logo.jpg" alt="IPVC Logo">
+        </div>
+        <button id="logoutButton" class="logout-button">Logout</button>
+    </header>
+    <div class="container">
+        <button class="logout-button" id="back-button">Voltar</button>
+        <form id="formulario">
+            <label for="observacoes">Observações:</label>
+            <textarea id="observacoes" name="observacoes"></textarea><br><br>
+
+            <label for="nota">Nota:</label>
+            <input type="number" id="nota" name="nota"><br><br>
+
+            <button type="button">Submeter Provas</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registar Nova Tese</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">                                 
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/ipvc_logo.jpg" alt="IPVC Logo">
+        </div>
+        <nav class="nav">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/registar-tese" id="registerThesisLink" style="display: none;">Registar Tese</a>
+        </nav>
+        <button id="logoutButton" class="logout-button">Logout</button>
+    </header>
+
+    <div class="container">
+        <h2 style="text-align: center;">Registar Nova Tese</h2>
+        <form id="registerThesisForm" enctype="multipart/form-data">
+            <label for="aluno">Aluno:</label>
+            <select id="aluno" name="aluno" required>
+                <option value="" disabled selected>Selecione um aluno</option>
+            </select>
+            <label for="orientador">Orientador:</label>
+            <select id="orientador" name="orientador" required>
+                <option value="" disabled selected>Selecione o orientador</option>
+            </select>
+        
+            <label for="titulo_pt">Título (PT):</label>
+            <input type="text" id="titulo_pt" name="titulo_pt" placeholder="Insira o título da tese (PT)" required>
+        
+            <label for="titulo_en">Título (EN):</label>
+            <input type="text" id="titulo_en" name="titulo_en" placeholder="Insira o título da tese (EN)" required>
+        
+            <label for="resumo">Resumo:</label>
+            <textarea id="resumo" name="resumo" rows="4" placeholder="Escreva o resumo da tese" required></textarea>
+        
+            <label for="pdf">Proposta de tese (PDF):</label>
+            <input type="file" id="pdf" name="documento" accept=".pdf" required>
+        
+            <button type="submit">Registar Tese</button>
+        </form>        
+    </div>    
+
+    <footer>
+        <p>&copy; 2024/25 Instituto Politécnico de Viana do Castelo.</p>
+    </footer>
+</body>
+</html>

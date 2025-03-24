@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar no site | IPVC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <img src="images/ipvc_logo.jpg" alt="IPVC Logo" class="logo">
+            <form action="#">
+                <input type="text" placeholder="Email" name="email" required>
+                <input type="password" placeholder="Senha" name="password" required>
+                <button type="submit">Entrar</button>
+                <a href="#" class="recover-link">Recuperar senha</a>
+            </form>
+        </div>
+        <div class="info-container">
+            <a href="#" class="info-link info-btn">
+                <img src="images/ponto.png" alt="Info" class="info-icon">Informação sobre cookies
+            </a>
+        </div>
+    </div>
+    <div class="cookie-modal" id="cookieModal">
+        <div class="cookie-content">
+            <span class="close">&times;</span>
+            <h2>Suporte para cookies necessário</h2>
+            <p>Este site utiliza cookies para melhorar a sua experiência. É necessário ativar cookies no seu navegador para garantir o correto funcionamento da autenticação e facilitar o acesso futuro à plataforma.</p>
+            <p>Você pode recusar cookies não essenciais, mas isso pode impactar a sua experiência de navegação. Certifique-se de revisar as configurações do navegador conforme necessário.</p>
+            <button class="ok-button">OK</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

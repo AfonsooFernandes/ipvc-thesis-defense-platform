@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Tese</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/ipvc_logo.jpg" alt="IPVC Logo">
+        </div>
+        <nav class="nav">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/registar-tese" id="registerThesisLink" style="display: none;">Registar Tese</a>
+            <button id="openModalButton" class="link-style-button">Submeter Documento</button>
+        </nav>
+
+        <button id="logoutButton" class="logout-button">Logout</button>
+    </header>
+
+    <div class="container">
+        <div id="thesis-detail-container"></div>
+        <button id="constitute-jury-button" style="display: none;" class="logout-button">
+            Constituir Júri
+        </button>
+        <input type="text" id="datetimepicker" style="display: none;" placeholder="Escolha data e hora">
+        <button id="submit-date-button" style="display: none;" class="logout-button">
+            Submeter data da defesa
+        </button>
+        <button id="tests-button" style="display: none;" class="logout-button">
+            Realizar Provas
+        </button>
+        <button id="generate-provas-parecer-button" style="display: none;" class="logout-button">
+            Gerar Documentos das Provas e as Atas
+        </button>
+        <div id="jury-container"></div>
+
+        <div id="documents-section">
+            <div id="documentos-container"></div>
+        </div>
+    </div>
+
+    <div id="juryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Constituir Júri</h3>
+            <form id="jury-form">
+                <label for="presidente">Presidente:</label>
+                <select id="presidente" name="presidente" required>
+                    <option value="">Selecione...</option>
+                </select required>
+                <br>
+
+                <label for="arguente-checkbox">Arguente:</label>
+                <label for="arguente-checkbox">
+                    O arguente está registado no sistema?
+                    <input type="checkbox" id="arguente-checkbox" name="arguente-checkbox">
+                </label>
+                <br>
+
+                <div id="arguente-select-container" style="display: none;">
+                    <label for="arguente">Selecione o arguente:</label>
+                    <select id="arguente" name="arguente">
+                        <option value="">Selecione...</option>
+                    </select>
+                </div>
+
+                <div id="arguente-input-container" style="display: none;">
+                    <label for="arguente-nome">Nome do Arguente:</label>
+                    <input type="text" id="arguente-nome" name="arguente-nome" placeholder="Nome completo">
+                    <br>
+                    <label for="arguente-email">Email do Arguente:</label>
+                    <input type="email" id="arguente-email" name="arguente-email" placeholder="Email">
+                    <br>
+                    <label for="arguente-instituicao">Instituição:</label>
+                    <div id="arguente-instituicao"></div>
+                    <br>
+                    <label for="arguente-doutorado">
+                        É doutorado?
+                        <input type="checkbox" id="arguente-doutorado" name="arguente-doutorado">
+                    </label>
+                    <label for="arguente-curriculum">Currículo do Arguente:</label>
+                    <textarea id="arguente-curriculum" name="arguente-curriculum" placeholder="Informe o currículo do arguente" rows="4" cols="50"></textarea>
+                    <br>
+                </div>
+                
+                <br>
+
+                <label for="vogal1">Vogal:</label>
+                <select id="vogal1" name="vogal1" required>
+                    <option value="">Selecione...</option>
+                </select required>
+                <br>
+                <br>
+
+                <button type="submit" id ="submit-button">Submeter</button>
+            </form>
+        </div>
+    </div>   
+    
+   
+    <div id="documentModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Submeter Documento</h3>
+            <form id="document-form" enctype="multipart/form-data">
+                <label for="document-type">Tipo de Documento:</label>
+                <select id="document-type" name="document-type" required>
+                </select>
+                <br><br>
+                <label for="document-upload">Selecione um ficheiro:</label>
+                <input type="file" id="document-upload" name="document-upload"  accept="application/pdf" required>
+                <br><br>
+                <button type="submit" id="submit-document-button">Submeter</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024/25 Instituto Politécnico de Viana do Castelo.</p>
+    </footer>
+</body>
+</html>

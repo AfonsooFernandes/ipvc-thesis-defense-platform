@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Defesas de Tese</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">                                 
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/ipvc_logo.jpg" alt="IPVC Logo">
+        </div>
+        <nav class="nav">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/registar-tese" id="registerThesisLink" style="display: none;">Registar Tese</a>
+        </nav>
+        
+        <button id="logoutButton" class="logout-button">Logout</button>
+    </header>
+
+    <div class="container" >
+        <div class="filters" display="none" id="filters-container">
+            <form id="filterForm">
+                <label for="estado">Estado:</label>
+                <select id="estadoFilter">
+                    <option value="">Todos</option>
+                </select>
+
+                <label for="data-defesa">Data da Defesa:</label>
+                <input type="date" id="dataDefesaFilter" name="data_defesa">
+
+                <label for="anoLetivo">Ano Letivo:</label>
+                <select id="anoLetivoFilter">
+                    <option value="">Todos</option>
+                </select>
+                
+
+                <button type="button" id="applyFilters">Aplicar Filtros</button>
+                <button type="reset" id="resetFilters">Limpar Filtros</button>
+            </form>
+        </div>
+
+        <div id="orientation-requests-container" class="orientation-requests">
+            <div id="propostas-container"></div>
+        </div>
+
+        <div id="associadas-container" class="card-container"></div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>&copy; 2024/25 Instituto Politécnico de Viana do Castelo.</p>
+</footer>
+</html>

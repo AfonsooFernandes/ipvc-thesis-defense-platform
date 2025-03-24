@@ -1,0 +1,304 @@
+/* Certifique-se de que o body e o html cubram a altura total da página */
+html, body {
+    height: 100%; /* Garantir que a altura do body e html ocupe 100% da tela */
+    margin: 0; /* Remover margem padrão */
+}
+
+body {
+    background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), /* Camada de sobreposição branca com opacidade */
+    url('../images/background.jpg'); /* Caminho da imagem */
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a tela */
+    background-position: center center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */;
+    background-attachment: fixed; /* Mantém o fundo fixo ao rolar a página */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    height: 60px; /* Aumentei para acomodar melhor os elementos */
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav {
+    margin-left: 20px;
+    display: flex;
+    gap: 20px;
+
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #0056b3;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.card-image {
+    width: 50px; 
+    height: 50px; 
+    object-fit: cover; 
+    margin-right: 30px; 
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: black;
+}
+
+.card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.status.aprovado {
+    color: green;
+}
+
+.status.reprovado {
+    color: red;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.modal {
+    display: none; /* Ocultar por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 60%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* Estilo para o botão de logout */
+.logout-button {
+    background-color: #0056b3; /* Cor vermelha (pode personalizar) */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Estilo ao passar o mouse sobre o botão de logout */
+.logout-button:hover {
+    background-color: #0056b3;
+}
+
+/* Certifique-se de que o botão de logout vai para o lado direito */
+header .logout-button {
+    margin-left: auto;
+}
+
+
+.accept-button, .reject-button {
+    margin-left: 30px;
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Suaviza as transições de hover */
+    border: none; /* Remove a borda padrão */
+    outline: none; /* Remove o contorno ao focar */
+    color: white;
+    text-transform: uppercase; /* Torna o texto maiúsculo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.reject-button {
+    margin-left: 10px;
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Suaviza as transições de hover */
+    border: none; /* Remove a borda padrão */
+    outline: none; /* Remove o contorno ao focar */
+    color: white;
+    text-transform: uppercase; /* Torna o texto maiúsculo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.accept-button {
+    background: linear-gradient(45deg, #4CAF50, #388E3C); /* Gradiente verde */
+    border: 1px solid #4CAF50; /* Borda suave com a mesma cor do gradiente */
+}
+
+.reject-button {
+    background: linear-gradient(45deg, #f44336, #d32f2f); /* Gradiente vermelho */
+    border: 1px solid #f44336; /* Borda suave com a mesma cor do gradiente */
+}
+
+/* Efeito de hover para os botões */
+.accept-button:hover {
+    background: linear-gradient(45deg, #388E3C, #4CAF50);
+    transform: translateY(-2px); /* Move o botão para cima */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
+}
+
+.reject-button:hover {
+    background: linear-gradient(45deg, #d32f2f, #f44336);
+    transform: translateY(-2px); /* Move o botão para cima */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
+}
+
+/* Efeito de foco (quando o botão é focado) */
+.accept-button:focus, .reject-button:focus {
+    outline: none; /* Remove o contorno */
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.4); /* Adiciona sombra verde para foco no "Aceitar" */
+}
+
+.reject-button:focus {
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.4); /* Adiciona sombra vermelha para foco no "Rejeitar" */
+}
+
+/* Adiciona espaço entre os botões */
+.card button {
+    margin-right: 10px;
+}
+
+/* Estilo para a seção de propostas de orientação */
+.orientation-requests {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+/* Estilo para os cards dentro das propostas de orientação */
+.orientation-requests .card {
+    width: 55%;  /* Altere para o valor desejado, como 80% ou 60% para um card mais estreito */
+}
+
+#propostas-container,
+#associadas-container {
+    display: flex;
+    flex-direction: column;  /* Alinha os filhos em coluna */
+    margin-top: 20px;
+}
+
+.filters {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filters label {
+    font-weight: bold;
+}
+
+.filters select,
+.filters input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filters button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background-color: #0056b3;
+}
